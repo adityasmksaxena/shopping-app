@@ -1,0 +1,36 @@
+{
+  "name": "shopping-app",
+  "version": "1.0.0",
+  "description": "## Shopping Cart App",
+  "main": "index.js",
+  "scripts": {
+    "test:client": "cd client && yarn test:once",
+    "test:server": "cd server && yarn test",
+    "test": "yarn test:server && yarn test:client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adityasmksaxena/shopping-app.git"
+  },
+  "author": "Aditya Saxena <adityasmksaxena@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adityasmksaxena/shopping-app/issues"
+  },
+  "homepage": "https://github.com/adityasmksaxena/shopping-app#readme",
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5"
+  },
+  "lint-staged": {
+    "client/src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
